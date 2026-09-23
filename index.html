@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastMoney</title>
+<meta name="description" content="send $5 to mint">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Everything on this page is static markup on purpose. The centre mark is a
+     real QR rendered as inline SVG rather than drawn at runtime, so it still
+     shows up in a preview pane, an email client or anything else that does not
+     execute scripts. Regenerate it with: node tools/make-qr.mjs <handle> */
+  :root {
+    --bg: #f8f8f6;
+    --ink: #1a1a18;
+    --muted: #6f6f69;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Geist, "Geist Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 34px;
+  }
+
+  .wordmark {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .nav {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    transition: opacity 140ms ease;
+  }
+  .nav:hover { opacity: 0.55; }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px 6vh;
+  }
+
+  .mark {
+    width: min(248px, 60vw);
+    aspect-ratio: 1;
+  }
+  .mark svg { width: 100%; height: 100%; display: block; }
+
+  .mint {
+    margin: clamp(52px, 10vh, 96px) 0 0;
+    font-size: 13px;
+    letter-spacing: 0.025em;
+    color: var(--muted);
+    text-align: center;
+  }
+  .mint a { color: var(--ink); transition: opacity 140ms ease; }
+  .mint a:hover { opacity: 0.55; }
+
+  .connect {
+    margin-top: clamp(38px, 7vh, 60px);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    padding: 6px 4px;
+    transition: opacity 140ms ease;
+  }
+  .connect:hover { opacity: 0.55; }
+  .connect:focus-visible { outline: 1px solid var(--ink); outline-offset: 6px; }
+
+  @media (max-width: 480px) {
+    header { padding: 22px 20px; }
+    .wordmark { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <a class="wordmark" href="./">FastMoney</a>
+    <a class="nav" href="https://x.com/fastmoney" target="_blank" rel="noopener noreferrer">twitter</a>
+  </header>
+
+  <main>
+    <div class="mark"><!--QR:START--><svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="QR code linking to the FastMoney X profile"><rect x="2" y="2" width="1" height="1" fill="#1b3fd8"/><rect x="3" y="2" width="1" height="1" fill="#1a1a18"/><rect x="4" y="2" width="1" height="1" fill="#0088b8"/><rect x="5" y="2" width="1" height="1" fill="#0088b8"/><rect x="6" y="2" width="1" height="1" fill="#00806f"/><rect x="7" y="2" width="1" height="1" fill="#00806f"/><rect x="8" y="2" width="1" height="1" fill="#00806f"/><rect x="10" y="2" width="1" height="1" fill="#ec008c"/><rect x="12" y="2" width="1" height="1" fill="#0088b8"/><rect x="13" y="2" width="1" height="1" fill="#00806f"/><rect x="14" y="2" width="1" height="1" fill="#ec008c"/><rect x="15" y="2" width="1" height="1" fill="#1b3fd8"/><rect x="20" y="2" width="1" height="1" fill="#00806f"/><rect x="21" y="2" width="1" height="1" fill="#0088b8"/><rect x="22" y="2" width="1" height="1" fill="#ec008c"/><rect x="23" y="2" width="1" height="1" fill="#0088b8"/><rect x="24" y="2" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="2" width="1" height="1" fill="#ec008c"/><rect x="26" y="2" width="1" height="1" fill="#ec008c"/><rect x="2" y="3" width="1" height="1" fill="#ec008c"/><rect x="8" y="3" width="1" height="1" fill="#0088b8"/><rect x="10" y="3" width="1" height="1" fill="#00806f"/><rect x="11" y="3" width="1" height="1" fill="#1b3fd8"/><rect x="15" y="3" width="1" height="1" fill="#0088b8"/><rect x="18" y="3" width="1" height="1" fill="#0088b8"/><rect x="20" y="3" width="1" height="1" fill="#00806f"/><rect x="26" y="3" width="1" height="1" fill="#0088b8"/><rect x="2" y="4" width="1" height="1" fill="#0088b8"/><rect x="4" y="4" width="1" height="1" fill="#0088b8"/><rect x="5" y="4" width="1" height="1" fill="#00806f"/><rect x="6" y="4" width="1" height="1" fill="#1a1a18"/><rect x="8" y="4" width="1" height="1" fill="#0088b8"/><rect x="10" y="4" width="1" height="1" fill="#00806f"/><rect x="13" y="4" width="1" height="1" fill="#0088b8"/><rect x="14" y="4" width="1" height="1" fill="#ec008c"/><rect x="15" y="4" width="1" height="1" fill="#00806f"/><rect x="18" y="4" width="1" height="1" fill="#1a1a18"/><rect x="20" y="4" width="1" height="1" fill="#1a1a18"/><rect x="22" y="4" width="1" height="1" fill="#1a1a18"/><rect x="23" y="4" width="1" height="1" fill="#0088b8"/><rect x="24" y="4" width="1" height="1" fill="#ec008c"/><rect x="26" y="4" width="1" height="1" fill="#1b3fd8"/><rect x="2" y="5" width="1" height="1" fill="#1b3fd8"/><rect x="4" y="5" width="1" height="1" fill="#ec008c"/><rect x="5" y="5" width="1" height="1" fill="#ec008c"/><rect x="6" y="5" width="1" height="1" fill="#1a1a18"/><rect x="8" y="5" width="1" height="1" fill="#ec008c"/><rect x="13" y="5" width="1" height="1" fill="#1a1a18"/><rect x="15" y="5" width="1" height="1" fill="#ec008c"/><rect x="20" y="5" width="1" height="1" fill="#1a1a18"/><rect x="22" y="5" width="1" height="1" fill="#00806f"/><rect x="23" y="5" width="1" height="1" fill="#00806f"/><rect x="24" y="5" width="1" height="1" fill="#ec008c"/><rect x="26" y="5" width="1" height="1" fill="#ec008c"/><rect x="2" y="6" width="1" height="1" fill="#00806f"/><rect x="4" y="6" width="1" height="1" fill="#ec008c"/><rect x="5" y="6" width="1" height="1" fill="#0088b8"/><rect x="6" y="6" width="1" height="1" fill="#ec008c"/><rect x="8" y="6" width="1" height="1" fill="#0088b8"/><rect x="10" y="6" width="1" height="1" fill="#1a1a18"/><rect x="11" y="6" width="1" height="1" fill="#1a1a18"/><rect x="12" y="6" width="1" height="1" fill="#1b3fd8"/><rect x="15" y="6" width="1" height="1" fill="#ec008c"/><rect x="16" y="6" width="1" height="1" fill="#0088b8"/><rect x="18" y="6" width="1" height="1" fill="#1b3fd8"/><rect x="20" y="6" width="1" height="1" fill="#00806f"/><rect x="22" y="6" width="1" height="1" fill="#ec008c"/><rect x="23" y="6" width="1" height="1" fill="#00806f"/><rect x="24" y="6" width="1" height="1" fill="#ec008c"/><rect x="26" y="6" width="1" height="1" fill="#00806f"/><rect x="2" y="7" width="1" height="1" fill="#1a1a18"/><rect x="8" y="7" width="1" height="1" fill="#0088b8"/><rect x="13" y="7" width="1" height="1" fill="#1b3fd8"/><rect x="14" y="7" width="1" height="1" fill="#ec008c"/><rect x="16" y="7" width="1" height="1" fill="#00806f"/><rect x="20" y="7" width="1" height="1" fill="#1a1a18"/><rect x="26" y="7" width="1" height="1" fill="#1b3fd8"/><rect x="2" y="8" width="1" height="1" fill="#0088b8"/><rect x="3" y="8" width="1" height="1" fill="#0088b8"/><rect x="4" y="8" width="1" height="1" fill="#00806f"/><rect x="5" y="8" width="1" height="1" fill="#00806f"/><rect x="6" y="8" width="1" height="1" fill="#0088b8"/><rect x="7" y="8" width="1" height="1" fill="#00806f"/><rect x="8" y="8" width="1" height="1" fill="#1a1a18"/><rect x="10" y="8" width="1" height="1" fill="#00806f"/><rect x="12" y="8" width="1" height="1" fill="#1b3fd8"/><rect x="14" y="8" width="1" height="1" fill="#1b3fd8"/><rect x="16" y="8" width="1" height="1" fill="#1b3fd8"/><rect x="18" y="8" width="1" height="1" fill="#1a1a18"/><rect x="20" y="8" width="1" height="1" fill="#1a1a18"/><rect x="21" y="8" width="1" height="1" fill="#ec008c"/><rect x="22" y="8" width="1" height="1" fill="#1b3fd8"/><rect x="23" y="8" width="1" height="1" fill="#0088b8"/><rect x="24" y="8" width="1" height="1" fill="#0088b8"/><rect x="25" y="8" width="1" height="1" fill="#1a1a18"/><rect x="26" y="8" width="1" height="1" fill="#1b3fd8"/><rect x="14" y="9" width="1" height="1" fill="#1a1a18"/><rect x="15" y="9" width="1" height="1" fill="#00806f"/><rect x="2" y="10" width="1" height="1" fill="#ec008c"/><rect x="5" y="10" width="1" height="1" fill="#1b3fd8"/><rect x="6" y="10" width="1" height="1" fill="#00806f"/><rect x="7" y="10" width="1" height="1" fill="#00806f"/><rect x="8" y="10" width="1" height="1" fill="#0088b8"/><rect x="9" y="10" width="1" height="1" fill="#ec008c"/><rect x="10" y="10" width="1" height="1" fill="#0088b8"/><rect x="13" y="10" width="1" height="1" fill="#1b3fd8"/><rect x="16" y="10" width="1" height="1" fill="#0088b8"/><rect x="17" y="10" width="1" height="1" fill="#1a1a18"/><rect x="18" y="10" width="1" height="1" fill="#1a1a18"/><rect x="19" y="10" width="1" height="1" fill="#1a1a18"/><rect x="22" y="10" width="1" height="1" fill="#ec008c"/><rect x="24" y="10" width="1" height="1" fill="#ec008c"/><rect x="25" y="10" width="1" height="1" fill="#0088b8"/><rect x="26" y="10" width="1" height="1" fill="#1a1a18"/><rect x="2" y="11" width="1" height="1" fill="#1a1a18"/><rect x="5" y="11" width="1" height="1" fill="#0088b8"/><rect x="7" y="11" width="1" height="1" fill="#1b3fd8"/><rect x="12" y="11" width="1" height="1" fill="#0088b8"/><rect x="14" y="11" width="1" height="1" fill="#1a1a18"/><rect x="15" y="11" width="1" height="1" fill="#ec008c"/><rect x="16" y="11" width="1" height="1" fill="#0088b8"/><rect x="17" y="11" width="1" height="1" fill="#ec008c"/><rect x="22" y="11" width="1" height="1" fill="#ec008c"/><rect x="23" y="11" width="1" height="1" fill="#ec008c"/><rect x="24" y="11" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="11" width="1" height="1" fill="#1a1a18"/><rect x="3" y="12" width="1" height="1" fill="#1b3fd8"/><rect x="4" y="12" width="1" height="1" fill="#00806f"/><rect x="7" y="12" width="1" height="1" fill="#1a1a18"/><rect x="8" y="12" width="1" height="1" fill="#0088b8"/><rect x="10" y="12" width="1" height="1" fill="#1b3fd8"/><rect x="11" y="12" width="1" height="1" fill="#0088b8"/><rect x="12" y="12" width="1" height="1" fill="#1a1a18"/><rect x="15" y="12" width="1" height="1" fill="#1b3fd8"/><rect x="17" y="12" width="1" height="1" fill="#00806f"/><rect x="22" y="12" width="1" height="1" fill="#1b3fd8"/><rect x="23" y="12" width="1" height="1" fill="#1a1a18"/><rect x="26" y="12" width="1" height="1" fill="#ec008c"/><rect x="3" y="13" width="1" height="1" fill="#ec008c"/><rect x="5" y="13" width="1" height="1" fill="#0088b8"/><rect x="6" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="9" y="13" width="1" height="1" fill="#00806f"/><rect x="10" y="13" width="1" height="1" fill="#1a1a18"/><rect x="11" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="12" y="13" width="1" height="1" fill="#00806f"/><rect x="13" y="13" width="1" height="1" fill="#ec008c"/><rect x="16" y="13" width="1" height="1" fill="#ec008c"/><rect x="17" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="19" y="13" width="1" height="1" fill="#1a1a18"/><rect x="22" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="23" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="24" y="13" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="13" width="1" height="1" fill="#0088b8"/><rect x="26" y="13" width="1" height="1" fill="#ec008c"/><rect x="2" y="14" width="1" height="1" fill="#ec008c"/><rect x="5" y="14" width="1" height="1" fill="#1b3fd8"/><rect x="7" y="14" width="1" height="1" fill="#ec008c"/><rect x="8" y="14" width="1" height="1" fill="#ec008c"/><rect x="12" y="14" width="1" height="1" fill="#00806f"/><rect x="13" y="14" width="1" height="1" fill="#ec008c"/><rect x="14" y="14" width="1" height="1" fill="#1a1a18"/><rect x="17" y="14" width="1" height="1" fill="#ec008c"/><rect x="18" y="14" width="1" height="1" fill="#0088b8"/><rect x="20" y="14" width="1" height="1" fill="#0088b8"/><rect x="26" y="14" width="1" height="1" fill="#ec008c"/><rect x="2" y="15" width="1" height="1" fill="#00806f"/><rect x="3" y="15" width="1" height="1" fill="#1a1a18"/><rect x="9" y="15" width="1" height="1" fill="#00806f"/><rect x="10" y="15" width="1" height="1" fill="#ec008c"/><rect x="11" y="15" width="1" height="1" fill="#1b3fd8"/><rect x="12" y="15" width="1" height="1" fill="#1a1a18"/><rect x="16" y="15" width="1" height="1" fill="#1a1a18"/><rect x="17" y="15" width="1" height="1" fill="#00806f"/><rect x="18" y="15" width="1" height="1" fill="#0088b8"/><rect x="22" y="15" width="1" height="1" fill="#00806f"/><rect x="25" y="15" width="1" height="1" fill="#0088b8"/><rect x="2" y="16" width="1" height="1" fill="#ec008c"/><rect x="3" y="16" width="1" height="1" fill="#00806f"/><rect x="5" y="16" width="1" height="1" fill="#1a1a18"/><rect x="6" y="16" width="1" height="1" fill="#ec008c"/><rect x="7" y="16" width="1" height="1" fill="#00806f"/><rect x="8" y="16" width="1" height="1" fill="#1b3fd8"/><rect x="13" y="16" width="1" height="1" fill="#0088b8"/><rect x="14" y="16" width="1" height="1" fill="#ec008c"/><rect x="16" y="16" width="1" height="1" fill="#1a1a18"/><rect x="17" y="16" width="1" height="1" fill="#1a1a18"/><rect x="20" y="16" width="1" height="1" fill="#ec008c"/><rect x="22" y="16" width="1" height="1" fill="#1a1a18"/><rect x="23" y="16" width="1" height="1" fill="#0088b8"/><rect x="24" y="16" width="1" height="1" fill="#1a1a18"/><rect x="25" y="16" width="1" height="1" fill="#ec008c"/><rect x="26" y="16" width="1" height="1" fill="#1a1a18"/><rect x="2" y="17" width="1" height="1" fill="#1a1a18"/><rect x="5" y="17" width="1" height="1" fill="#1a1a18"/><rect x="6" y="17" width="1" height="1" fill="#00806f"/><rect x="7" y="17" width="1" height="1" fill="#ec008c"/><rect x="9" y="17" width="1" height="1" fill="#0088b8"/><rect x="13" y="17" width="1" height="1" fill="#1a1a18"/><rect x="16" y="17" width="1" height="1" fill="#0088b8"/><rect x="17" y="17" width="1" height="1" fill="#ec008c"/><rect x="19" y="17" width="1" height="1" fill="#ec008c"/><rect x="21" y="17" width="1" height="1" fill="#ec008c"/><rect x="23" y="17" width="1" height="1" fill="#0088b8"/><rect x="24" y="17" width="1" height="1" fill="#ec008c"/><rect x="26" y="17" width="1" height="1" fill="#00806f"/><rect x="2" y="18" width="1" height="1" fill="#00806f"/><rect x="6" y="18" width="1" height="1" fill="#00806f"/><rect x="8" y="18" width="1" height="1" fill="#1a1a18"/><rect x="12" y="18" width="1" height="1" fill="#00806f"/><rect x="15" y="18" width="1" height="1" fill="#00806f"/><rect x="18" y="18" width="1" height="1" fill="#1a1a18"/><rect x="19" y="18" width="1" height="1" fill="#1a1a18"/><rect x="20" y="18" width="1" height="1" fill="#1b3fd8"/><rect x="21" y="18" width="1" height="1" fill="#0088b8"/><rect x="22" y="18" width="1" height="1" fill="#ec008c"/><rect x="24" y="18" width="1" height="1" fill="#ec008c"/><rect x="25" y="18" width="1" height="1" fill="#ec008c"/><rect x="10" y="19" width="1" height="1" fill="#ec008c"/><rect x="11" y="19" width="1" height="1" fill="#0088b8"/><rect x="13" y="19" width="1" height="1" fill="#0088b8"/><rect x="14" y="19" width="1" height="1" fill="#00806f"/><rect x="18" y="19" width="1" height="1" fill="#1a1a18"/><rect x="22" y="19" width="1" height="1" fill="#1b3fd8"/><rect x="24" y="19" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="19" width="1" height="1" fill="#ec008c"/><rect x="2" y="20" width="1" height="1" fill="#1b3fd8"/><rect x="3" y="20" width="1" height="1" fill="#00806f"/><rect x="4" y="20" width="1" height="1" fill="#0088b8"/><rect x="5" y="20" width="1" height="1" fill="#1b3fd8"/><rect x="6" y="20" width="1" height="1" fill="#0088b8"/><rect x="7" y="20" width="1" height="1" fill="#1a1a18"/><rect x="8" y="20" width="1" height="1" fill="#0088b8"/><rect x="10" y="20" width="1" height="1" fill="#00806f"/><rect x="11" y="20" width="1" height="1" fill="#0088b8"/><rect x="12" y="20" width="1" height="1" fill="#0088b8"/><rect x="13" y="20" width="1" height="1" fill="#0088b8"/><rect x="15" y="20" width="1" height="1" fill="#ec008c"/><rect x="18" y="20" width="1" height="1" fill="#1a1a18"/><rect x="20" y="20" width="1" height="1" fill="#1a1a18"/><rect x="22" y="20" width="1" height="1" fill="#1a1a18"/><rect x="26" y="20" width="1" height="1" fill="#1b3fd8"/><rect x="2" y="21" width="1" height="1" fill="#00806f"/><rect x="8" y="21" width="1" height="1" fill="#0088b8"/><rect x="10" y="21" width="1" height="1" fill="#00806f"/><rect x="11" y="21" width="1" height="1" fill="#1a1a18"/><rect x="12" y="21" width="1" height="1" fill="#0088b8"/><rect x="14" y="21" width="1" height="1" fill="#0088b8"/><rect x="15" y="21" width="1" height="1" fill="#ec008c"/><rect x="18" y="21" width="1" height="1" fill="#ec008c"/><rect x="22" y="21" width="1" height="1" fill="#0088b8"/><rect x="25" y="21" width="1" height="1" fill="#1b3fd8"/><rect x="2" y="22" width="1" height="1" fill="#0088b8"/><rect x="4" y="22" width="1" height="1" fill="#1a1a18"/><rect x="5" y="22" width="1" height="1" fill="#00806f"/><rect x="6" y="22" width="1" height="1" fill="#1a1a18"/><rect x="8" y="22" width="1" height="1" fill="#0088b8"/><rect x="10" y="22" width="1" height="1" fill="#ec008c"/><rect x="11" y="22" width="1" height="1" fill="#0088b8"/><rect x="12" y="22" width="1" height="1" fill="#0088b8"/><rect x="14" y="22" width="1" height="1" fill="#1b3fd8"/><rect x="16" y="22" width="1" height="1" fill="#1b3fd8"/><rect x="17" y="22" width="1" height="1" fill="#ec008c"/><rect x="18" y="22" width="1" height="1" fill="#1a1a18"/><rect x="19" y="22" width="1" height="1" fill="#ec008c"/><rect x="20" y="22" width="1" height="1" fill="#1b3fd8"/><rect x="21" y="22" width="1" height="1" fill="#0088b8"/><rect x="22" y="22" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="22" width="1" height="1" fill="#00806f"/><rect x="26" y="22" width="1" height="1" fill="#00806f"/><rect x="2" y="23" width="1" height="1" fill="#00806f"/><rect x="4" y="23" width="1" height="1" fill="#1b3fd8"/><rect x="5" y="23" width="1" height="1" fill="#1a1a18"/><rect x="6" y="23" width="1" height="1" fill="#1a1a18"/><rect x="8" y="23" width="1" height="1" fill="#1b3fd8"/><rect x="10" y="23" width="1" height="1" fill="#1b3fd8"/><rect x="12" y="23" width="1" height="1" fill="#ec008c"/><rect x="15" y="23" width="1" height="1" fill="#0088b8"/><rect x="17" y="23" width="1" height="1" fill="#1b3fd8"/><rect x="18" y="23" width="1" height="1" fill="#1b3fd8"/><rect x="19" y="23" width="1" height="1" fill="#ec008c"/><rect x="20" y="23" width="1" height="1" fill="#0088b8"/><rect x="25" y="23" width="1" height="1" fill="#0088b8"/><rect x="26" y="23" width="1" height="1" fill="#ec008c"/><rect x="2" y="24" width="1" height="1" fill="#00806f"/><rect x="4" y="24" width="1" height="1" fill="#00806f"/><rect x="5" y="24" width="1" height="1" fill="#00806f"/><rect x="6" y="24" width="1" height="1" fill="#00806f"/><rect x="8" y="24" width="1" height="1" fill="#00806f"/><rect x="11" y="24" width="1" height="1" fill="#ec008c"/><rect x="14" y="24" width="1" height="1" fill="#ec008c"/><rect x="16" y="24" width="1" height="1" fill="#0088b8"/><rect x="18" y="24" width="1" height="1" fill="#ec008c"/><rect x="19" y="24" width="1" height="1" fill="#0088b8"/><rect x="22" y="24" width="1" height="1" fill="#0088b8"/><rect x="23" y="24" width="1" height="1" fill="#ec008c"/><rect x="24" y="24" width="1" height="1" fill="#1b3fd8"/><rect x="25" y="24" width="1" height="1" fill="#1a1a18"/><rect x="26" y="24" width="1" height="1" fill="#ec008c"/><rect x="2" y="25" width="1" height="1" fill="#1b3fd8"/><rect x="8" y="25" width="1" height="1" fill="#ec008c"/><rect x="12" y="25" width="1" height="1" fill="#ec008c"/><rect x="16" y="25" width="1" height="1" fill="#ec008c"/><rect x="21" y="25" width="1" height="1" fill="#1a1a18"/><rect x="22" y="25" width="1" height="1" fill="#ec008c"/><rect x="24" y="25" width="1" height="1" fill="#0088b8"/><rect x="25" y="25" width="1" height="1" fill="#00806f"/><rect x="26" y="25" width="1" height="1" fill="#0088b8"/><rect x="2" y="26" width="1" height="1" fill="#1b3fd8"/><rect x="3" y="26" width="1" height="1" fill="#1a1a18"/><rect x="4" y="26" width="1" height="1" fill="#00806f"/><rect x="5" y="26" width="1" height="1" fill="#1b3fd8"/><rect x="6" y="26" width="1" height="1" fill="#00806f"/><rect x="7" y="26" width="1" height="1" fill="#1b3fd8"/><rect x="8" y="26" width="1" height="1" fill="#1b3fd8"/><rect x="10" y="26" width="1" height="1" fill="#1a1a18"/><rect x="12" y="26" width="1" height="1" fill="#0088b8"/><rect x="14" y="26" width="1" height="1" fill="#0088b8"/><rect x="15" y="26" width="1" height="1" fill="#1a1a18"/><rect x="16" y="26" width="1" height="1" fill="#0088b8"/><rect x="18" y="26" width="1" height="1" fill="#00806f"/><rect x="23" y="26" width="1" height="1" fill="#0088b8"/><rect x="26" y="26" width="1" height="1" fill="#ec008c"/></svg><!--QR:END--></div>
+    <p class="mint">send $5 to <a href="https://x.com/fastmoney" target="_blank" rel="noopener noreferrer">@fastmoney</a> to mint</p>
+    <a class="connect" href="https://x.com/fastmoney" target="_blank" rel="noopener noreferrer">connect x</a>
+  </main>
+</body>
+</html>
